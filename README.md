@@ -64,4 +64,4 @@ Your webpage must be stored in your Spring application's “static” folder and
 If you cannot push it to the hosting platform, you may get partial marks if you upload your work as a zip file.
 
 ## My Work Demonstration
-![Watch My Assignment Demo][https://github.com/NormanCao2702/cmpt276asgn1/issues/1#issue-2485518720]
+https://github.com/user-attachments/assets/39dc2109-b96b-4a01-a8fb-29c3a39ff065
