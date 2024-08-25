@@ -9,9 +9,16 @@ var total_students= new Array(12);
 
 // Get all the input elements within the table
 var inputFields = document.querySelectorAll('.input-field'); //store in a form of array
+inputFields.forEach(inputField =>{
+  inputField.addEventListener('keydown', function(event){
+    if(event.key == 'Enter'){
+      event.preventDefault();
+      firstTableProcess();
+    }
+  })
+})
 
-var submit_button = document.querySelector('#button');
-submit_button.addEventListener("click", function(){
+function firstTableProcess(){
   var boolean = false;
   inputFields.forEach(function(input) {
     // Get the value of each input
@@ -48,18 +55,31 @@ for(let i = 0;i<inputFields.length-1;i++){
     addData(newChart,total_students);
     
   };
+}
+var submit_button = document.querySelector('#button');
+submit_button.addEventListener("click", function(){
+  firstTableProcess();
 });
 
-var new_grade = document.querySelectorAll('.box');
+var new_grade = document.querySelector('.box');
 var submit_button2 = document.querySelector('#butt');
 
-submit_button2.addEventListener("click", function(){
+new_grade.addEventListener('keydown', function(event){
+  if(event.key == 'Enter'){
+    event.preventDefault();
+    secondTableProcess();
+  }
+})
+
+function secondTableProcess(){
     var boolean = false;
-    var input = parseFloat(new_grade[0].value);
+
+    var input = new_grade.value;
     if (isNaN(input) || input < 0 || input > max || max == null) {
       boolean = true;
     }
     else{
+      var input = parseFloat(new_grade.value);
       grades.push(input);
       processData(grades, total_students);
       addData(newChart,total_students);
@@ -67,6 +87,9 @@ submit_button2.addEventListener("click", function(){
 
     if(boolean == true)
       window.alert("Please type valid grade (also type lower bounds first)!");
+}
+submit_button2.addEventListener("click", function(){
+    secondTableProcess();
 })
 
 function addData(newChart, total_students) {
@@ -106,6 +129,8 @@ function processData(grades, total_students){
       total_students[10]++;
   }
 }
+
+
 
 var canvasElement = document.getElementById("histogramChart");
 var config = {

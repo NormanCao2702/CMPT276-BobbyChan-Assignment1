@@ -62,3 +62,6 @@ Your webpage must be stored in your Spring application's “static” folder and
 1. The URL of your web app; this is where we can play around with your application. It is your responsibility to ensure that you have the correct URL.  If the TAs cannot find it, he/she cannot mark it.
 2. Your Git link, this is where we can view your code, progress and submission time.
 If you cannot push it to the hosting platform, you may get partial marks if you upload your work as a zip file.
+
+## My Work Demonstration
+![Watch My Assignment Demo][https://github.com/NormanCao2702/cmpt276asgn1/issues/1#issue-2485518720]
